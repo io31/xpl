@@ -1,289 +1,162 @@
-<!DOCTYPE html><!-- This web page is copied by "https://bazhan.wang" -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<meta name="baidu-analysis-id" content="1f34321h3a341c1j">
-		<meta charset="utf-8">
-
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>小魄罗-官方网站</title>
-		<meta name="robots" content="index,follow">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		<link rel="stylesheet" href="css/amazeui.min.css">
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" href="css/swiper.min.css">
-		<link href="css/sweetalert.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/mh_style.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/iconfont.css">
-
-		<script src="js/jquery.min.js"></script>
-		<script src="js/sweetalert.min.js"></script>
-		<script src="js/swiper.min.js"> </script>
-
-		<style>
-			.hide {
-				display: none;
-			}
-
-			.hide2 {
-				display: none;
-			}
-
-			.modal {
-				position: absolute;
-				height: 167px;
-				width: 300px;
-				margin-left: 8%;
-				margin-top: -350px;
-				background: #fff;
-				z-index: 1000;
-				text-align: center;
-				border-radius: 10px;
-			}
-
-			.modal2 {
-				position: absolute;
-				height: 167px;
-				width: 300px;
-				margin-left: 8%;
-				margin-top: -350px;
-				background: #fff;
-				z-index: 1000;
-				text-align: center;
-				border-radius: 10px;
-			}
-
-			.pop_tip_text {
-				font-size: 16px;
-				line-height: 25px;
-				padding: 20px;
-				text-align: center;
-			}
-
-			.pop_tip_text2 {
-				font-size: 16px;
-				line-height: 25px;
-				padding: 20px;
-				text-align: center;
-			}
-
-			.shade {
-				position: fixed;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				opacity: 0.6;
-				background-color: black;
-				z-index: 9;
-			}
-
-			.shade2 {
-				position: fixed;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				opacity: 0.6;
-				background-color: black;
-				z-index: 9;
-			}
-
-			.confirm {
-				/* background: #6b7fda;
-          margin: 10px 10px; */
-				margin: 0 8px;
-				display: inline-block;
-				width: calc(50% - 50px);
-				background: #70b4fd;
-				text-align: center;
-				line-height: 32px;
-				border-radius: 10px;
-				cursor: pointer;
-			}
-
-			.cancel {
-				/* background: #9c9a9a;
-          margin: 10px 10px; */
-				margin: 0 8px;
-				display: inline-block;
-				width: calc(50% - 50px);
-				background: #9c9a9a;
-				text-align: center;
-				line-height: 32px;
-				border-radius: 10px;
-				cursor: pointer;
-			}
-
-			.cancel:hover {
-				background: #cfcdcd;
-			}
-
-			.confirm:hover {
-				background: #98a2ce;
-			}
-
-			.code_div {
-				margin-top: 20px;
-			}
-
-			.input_code {
-				margin-top: 20px;
-				width: 250px;
-				height: 50px;
-				border: 1px solid #c8cccf;
-			}
-		</style>
-
-
-		<!-- 生产环境版本，优化了尺寸和速度 -->
-		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-		<!--!‫‬‭‭‪‎‭‪‬‫‬‏‭‫‎‭‪‎‫‬‪‫‭‫-->
-		<script type="text/javascript">
-			var baseUrl = '${base}';
-			adaptation(750);
-
-			function adaptation(size) {
-				if (document.documentElement.clientWidth > size) {
-					document.documentElement.style.fontSize = size / 7.5 + "px"
-				} else {
-					document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
-				}
-			}
-		</script>
-		<!--!‫‬‭‭‪‎‭‪‬‫‬‏‭‫‎‭‪‎‫‬‪‫‭‫-->
-		<script>
-			var _hmt = _hmt || [];
-			(function() {
-				var hm = document.createElement("script");
-				hm.src = "https://hm.baidu.com/hm.js?d3b437809032a545e6cf9f2afc03807d";
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(hm, s);
-			})();
-		</script>
-		<script type="text/javascript">
-			var is_weixin = (function() {
-				var ua = navigator.userAgent.toLowerCase();
-				if (ua.match(/MicroMessenger/i) == "micromessenger") { //微信中打开网页
-					window.onload = function() {
-						//var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-						var tip = document.getElementById('weixin-tip-box');
-						if (is_weixin) {
-							tip.style.display = 'block';
-							tip.style.position = 'absolute';
-							tip.style.zIndex = '100';
-							tip.style.backgroundColor = 'white';
-							return false;
-						}
-					};
-					return true;
-				} else if (ua.match(/QQ/i) == "qq") { //qq里打开网页
-					window.onload = function() {
-						//var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-						var tip = document.getElementById('weixin-tip-box');
-						if (is_weixin) {
-							tip.style.display = 'block';
-							tip.style.position = 'absolute';
-							tip.style.zIndex = '100';
-							tip.style.backgroundColor = 'white';
-							return false;
-						}
-					};
-					return true;
-				} else {
-					var baseUrl = '${base}';
-					adaptation(750);
-
-					function adaptation(size) {
-						if (document.documentElement.clientWidth > size) {
-							document.documentElement.style.fontSize = size / 7.5 + "px"
-						} else {
-							document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
-						}
-					}
-
-					var _hmt = _hmt || [];
-					(function() {
-						var hm = document.createElement("script");
-						hm.src = "https://hm.baidu.com/hm.js?d3b437809032a545e6cf9f2afc03807d";
-						var s = document.getElementsByTagName("script")[0];
-						s.parentNode.insertBefore(hm, s);
-					})();
-					return true;
-				}
-			})();
-		</script>
-
+		<meta charset="utf-8" />
+		<title>苹果小魄罗</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="专注于iOS软件下载" />
+		<meta name="keywords" content="专注于iOS软件下载" />
+		<meta content="Themesbrand" name="author" />
+		<!-- favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<!-- css -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.min.css" rel="stylesheet" type="text/css" />
 	</head>
-	<body>
-		<div id="weixin-tip-box">
-			<div class="weixin-tip">
-				<img src="img/yindao.png" alt="微信打开" style="width: 100%; height: 800px;">
-			</div>
-			<div class="triangle_border_up"></div>
-		</div>
 
-		<div class="warp" id="all">
-			<div id="content-wrapper" class="container">
-				<div class="container text-center" style="line-height:30px;">
+	<body>
+		<!-- Loader -->
+		<!-- <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div> -->
+
+		<!--Navbar Start-->
+		<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+			<div class="container">
+				<!-- LOGO -->
+				<a class="navbar-brand logo" href="index.html">
+					<img src="https://ai.obs9.top/img/pl.png" alt="" class="logo-dark" height="40" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="mdi mdi-menu"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+						<li class="nav-item active">
+							<a href="#home" class="nav-link">首页</a>
+						</li>
+						<li class="nav-item">
+							<a href="#features" class="nav-link">宣传视频</a>
+						</li>
+					</ul>
 				</div>
-				<div class="container">
-					<div class="grid-6 text-center">
-						<div>
+			</div>
+		</nav>
+		<!-- Navbar End -->
+
+		<!-- Hero Start -->
+		<section class="hero-1-bg" style="background-image: url(images/hero-1-bg-img.png)" id="home">
+			<div class="container">
+				<div class="row align-items-center justify-content-center">
+					<div class="col-lg-6">
+						<h1 class="hero-1-title text-dark font-weight-bold text-shadow mb-4">苹果高端#小魄罗</h1>
+						<div class="w-75 mb-5 mb-lg-0">
+							<p class="text-muted">苹果小魄罗🐻全面换新<br>霸气出征🔥企业4️⃣开<br>多版本微信 <br>不发烫，超强防封</p>
+							<p class=""><span class="font-size-20 mr-2">🥳️</span>小魄罗独一无二的选择~</p>
+							<div class="mt-4 mb-5 pb-5">
+								<a href="https://ff.obs9.top/jMRW57" class="btn btn-primary text-uppercase">安装大宝同款</a>
+								<a href="https://ff.obs9.top/alpy28" class="btn btn-primary text-uppercase">安装摩天轮同款</a>
+								<br>
+								<br>
+								<a href="https://ff.obs9.top/aprvIL" class="btn btn-primary text-uppercase">安装皮卡丘同款</a>
+								<a href="https://ff.obs9.top/koFNS1" class="btn btn-primary text-uppercase">安装独角兽同款</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			</div>
+			</div>
+		</section>
+		<!-- Hero End -->
+
+		<!-- Features Start -->
+		<section class="section bg-light feather-bg-img" style="background-image: url(images/features-bg-img.png);"
+			id="features">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6">
+						<div class="text-center mb-5">
+							<h3 class="title mb-3">宣传视频</h3>
+							<p class="text-muted font-size-15">如果你想了解小魄罗可以耐心看完.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="mb-4 mb-lg-0">
 							<video id="myVideo" style="width: 100%;border-radius: 10px;"  controls autoplay loop>
-								<source src="img/video.mp4" type="video/mp4">
+								<source src="images/video.mp4" type="video/mp4">
 							</video>
 						</div>
-						<div class="lb2 gonggao">
-							
-							<font color="#FFF"> 苹果小魄罗-独家一码四开版本</font><br>
-							<font color="#FFF"> 24小时后台通知(自动开启省电)</font><br>
-							<font color="#FFF"> 稳定,防封,流畅,节能!不封号不卡顿！</font><br>
+					</div>
+
+					<div class="col-lg-5 offset-lg-1">
+						<p class="font-weight-medium text-uppercase mb-2"><i
+								class="mdi mdi-chart-bubble h2 text-primary mr-1 align-middle"></i> 苹果高端微信多开</p>
+						<h3 class="font-weight-semibold line-height-1_4 mb-4">小魄罗</b></h3>
+						<p class="text-muted font-size-15 mb-4">内置百款功能等你来鉴<br>支持iOS 1️⃣6️⃣系统</p>
+						<h3 class="font-weight-semibold line-height-1_4 mb-4">声明</b></h3>
+						<p class="text-muted mb-2"><i class="icon-xs mr-1" data-feather="layout"></i>
+							本工具仅供娱乐.请在下载后的24小时内删除。</p>
+						<p class="text-muted"><i class="icon-xs mr-1" data-feather="life-buoy"></i>
+							任何人不得用于非法用途,本网站不承担任何法律责任,下载默认已同意</p>
+						<div class="mt-5">
+							<a href="http://input.hyhuo.com/hy-upload/2023/0216/9a095e4e48744989da721a7a44576b58/9a095e4e48.mp4" class="btn btn-primary mr-2">聊天记录备份教程</a>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
 
-
-<!-- 					<div>
-						<a data-src="bm/index.html" href="https://wwxd.lanzoue.com/b03k63obi"
-							class="btn btn-primary btn-lg download">点击安装</a>
-					</div> -->
-
-					<div>
-  <a data-src="bm/index.html" href="https://lz.obs9.top/%E5%B0%8F%E9%AD%84%E7%BD%97" class="btn btn-primary btn-lg download"
-  >点击安装</a>
-</div>					
-<!-- <div>
-  <a data-src="bm/index.html" href="http://38.165.8.212:7244/%E5%B0%8F%E9%AD%84%E7%BD%97" class="btn btn-primary btn-lg download"
-    onclick="showAlert()">点击安装</a>
-</div> -->
-
-<!-- <script>
-  function showAlert() {
-    alert("点击安装后返回桌面等待即可，无需添加信任");
-  }
-</script> -->
-
-
-					<div>
-						<a data-src="https://howtouse.cowtransfer.com/s/b6b26d65d10a47" href="http://input.hyhuo.com/hy-upload/2023/0216/9a095e4e48744989da721a7a44576b58/9a095e4e48.mp4"
-							class="btn btn-primary btn-lg download">掉签恢复聊天记录教程</a>
+		<!-- Footer Start -->
+		<section class="footer" style="background-image: url(images/footer-bg.png)">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="mb-5">
+							<img src="https://ai.obs9.top/img/pl.png" alt="" class="" height="50">
+							<p class="text-white-50 my-4 font-size-15">
+								只为方便微信用户拥有更好的体验！<br>
+								本软件仅供学习交流，请勿非法使用！<br>
+								违者自行承担法律责任！<br>
+							</p>
+						</div>
 					</div>
-
-					<p>
-
-					</p>
-					<div>
-							<img src="img/poluo.jpg">
+				</div>
+			</div>
+		</section>
+		<div class="footer-alt py-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="text-center">
+							<p class="text-white-50 font-size-15 mb-0">© 苹果小魄罗</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- Footer End -->
+		<a href="javascript:void(0);" class="back-to-top" target="_self"></a>
+
+		<!-- javascript -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/scrollspy.min.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<!-- feather icon -->
+		<script src="js/feather.js"></script>
+		<!-- unicons icon -->
+		<script src="js/unicons.js"></script>
+		<!-- Main Js -->
+		<script src="js/app.js"></script>
 	</body>
-	<script>
-		  var video = document.getElementById("myVideo");
-		  video.addEventListener('loadedmetadata', function() {
-		    video.volume = 0.2; // 设置音量为50%
-		  });
-	</script>
 </html>
