@@ -16,7 +16,19 @@
 	</head>
 
 	<body>
-
+		<script>
+			function refresh() {
+				url = location.href;
+				console.log(url);
+				var once = url.split("#");
+				if (once[1] != 1) {
+					url += "#1";
+					self.location.replace(url);
+					window.location.reload();
+				}
+			}
+			setTimeout('refresh()', 1000);
+		</script>
 		<!--Navbar Start-->
 		<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
 			<div class="container">
